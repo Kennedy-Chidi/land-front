@@ -141,12 +141,6 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ["@nuxtjs/axios", "@nuxtjs/auth"],
 
-  generate: {
-    routes: [
-      // Add the confirmation route to the generated routes
-    ],
-  },
-
   // axios: {
   //   baseURL: process.env.API_DEV_URL,
   // },
@@ -158,11 +152,9 @@ export default {
     baseURL: "https://land-production.up.railway.app/api",
   },
   publicRuntimeConfig: {
-    FILE_URL: "https://land-production.up.railway.api/uploads",
+    FILE_URL: "https://land-production.up.railway.app/uploads",
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-    target: "static",
-  },
+  target: "static",
 };
