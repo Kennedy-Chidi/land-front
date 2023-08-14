@@ -45,7 +45,7 @@
                     </div>
                     <div class="sub-text-holder">
                       <div class="plan-heading">
-                        ${{ formatMoney(pendingWithdrawal) }} USD
+                        ${{ formatMoney(user.pendingWithdrawal) }} USD
                       </div>
                     </div>
                   </div>

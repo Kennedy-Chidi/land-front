@@ -77,7 +77,7 @@
                   <div class="short-middle-flexer">
                     <div class="main-text-holder">
                       <div class="main-text">
-                        ${{ formatMoney(totalDeposit) }} USD
+                        ${{ formatMoney(user.totalDeposit) }} USD
                       </div>
                     </div>
                     <img
@@ -97,7 +97,7 @@
               </div>
               <div class="short-down">
                 <h1 class="sub-heading">
-                  ${{ formatMoney(totalDeposit) }} USD
+                  ${{ formatMoney(user.totalDeposit) }} USD
                 </h1>
                 <img
                   src="/dashboard-images/3-vertical-dots-icon.svg"
@@ -157,7 +157,7 @@
                   <div class="short-middle-flexer">
                     <div class="main-text-holder">
                       <div class="main-text">
-                        ${{ formatMoney(pendingWithdrawal) }} USD
+                        ${{ formatMoney(user.pendingWithdrawal) }} USD
                       </div>
                     </div>
                     <img
@@ -177,7 +177,7 @@
               </div>
               <div class="short-down">
                 <h1 class="sub-heading">
-                  ${{ formatMoney(pendingWithdrawal) }} USD
+                  ${{ formatMoney(user.pendingWithdrawal) }} USD
                 </h1>
                 <img
                   src="/dashboard-images/3-vertical-dots-icon.svg"
@@ -192,12 +192,12 @@
               <div class="short-top">
                 <div class="short-side-contents">
                   <div class="main-header-holder">
-                    <h1 class="main-header">Total Withdrawal</h1>
+                    <h1 class="main-header">Pending Deposit</h1>
                   </div>
                   <div class="short-middle-flexer">
                     <div class="main-text-holder">
                       <div class="main-text">
-                        ${{ formatMoney(totalWithdrawal) }} USD
+                        ${{ formatMoney(user.pendingDeposit) }} USD
                       </div>
                     </div>
                     <img
@@ -217,7 +217,7 @@
               </div>
               <div class="short-down">
                 <h1 class="sub-heading">
-                  ${{ formatMoney(totalWithdrawal) }} USD
+                  ${{ formatMoney(user.pendingDeposit) }} USD
                 </h1>
                 <img
                   src="/dashboard-images/3-vertical-dots-icon.svg"
@@ -309,7 +309,7 @@
                     <div class="main-text">Deposit</div>
                   </div>
                   <div class="day-header-holder">
-                    <h1 class="main-header">${{ totalDeposit }} USD</h1>
+                    <h1 class="main-header">${{ user.totalDeposit }} USD</h1>
                   </div>
                 </div>
               </div>
@@ -319,7 +319,7 @@
                     <div class="main-text">Withdrawal</div>
                   </div>
                   <div class="day-header-holder">
-                    <h1 class="main-header">${{ totalWithdrawal }} USD</h1>
+                    <h1 class="main-header">${{ user.totalWithdrawal }} USD</h1>
                   </div>
                 </div>
               </div>
@@ -496,7 +496,6 @@ export default {
         this.pendingWithdrawal = this.getPendingWithdrawal(
           await result.data.data
         );
-        console.log(result.data.data);
         this.wallets = result.data.data;
       } catch (err) {
         console.log(err.response);
