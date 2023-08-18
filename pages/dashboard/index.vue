@@ -411,8 +411,8 @@ export default {
         return 0;
       } else {
         let money = 0;
-        data.forEach((el) => {
-          money += el.amount;
+        data.forEach(async (el) => {
+          money += await el.amount;
         });
         return money;
       }
