@@ -17,14 +17,14 @@
                     <h1 class="sub-heading">Total Balance</h1>
                   </div>
                   <div class="sub-text-holder">
-                    <div class="sub-text">{{ user.fullName }}</div>
+                    <div class="sub-text">{{ authUser.fullName }}</div>
                   </div>
                 </div>
                 <div class="thick-header-holder">
                   <h1 class="thick-header">
                     <span class="text-span"
                       >${{
-                        formatMoney(Number(user.totalBalance).toFixed(2))
+                        formatMoney(Number(authUser.totalBalance).toFixed(2))
                       }}
                       USD</span
                     >
@@ -77,7 +77,7 @@
                   <div class="short-middle-flexer">
                     <div class="main-text-holder">
                       <div class="main-text">
-                        ${{ formatMoney(user.totalDeposit) }} USD
+                        ${{ formatMoney(authUser.totalDeposit) }} USD
                       </div>
                     </div>
                     <img
@@ -97,7 +97,7 @@
               </div>
               <div class="short-down">
                 <h1 class="sub-heading">
-                  ${{ formatMoney(user.totalDeposit) }} USD
+                  ${{ formatMoney(authUser.totalDeposit) }} USD
                 </h1>
                 <img
                   src="/dashboard-images/3-vertical-dots-icon.svg"
@@ -309,7 +309,9 @@
                     <div class="main-text">Deposit</div>
                   </div>
                   <div class="day-header-holder">
-                    <h1 class="main-header">${{ user.totalDeposit }} USD</h1>
+                    <h1 class="main-header">
+                      ${{ authUser.totalDeposit }} USD
+                    </h1>
                   </div>
                 </div>
               </div>
@@ -319,7 +321,9 @@
                     <div class="main-text">Withdrawal</div>
                   </div>
                   <div class="day-header-holder">
-                    <h1 class="main-header">${{ user.totalWithdrawal }} USD</h1>
+                    <h1 class="main-header">
+                      ${{ authUser.totalWithdrawal }} USD
+                    </h1>
                   </div>
                 </div>
               </div>
