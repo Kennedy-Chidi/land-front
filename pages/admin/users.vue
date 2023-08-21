@@ -323,7 +323,7 @@ export default {
       suspension: "",
       search: "",
 
-      limit: 4,
+      limit: 20,
       sort: "-regDate",
       itemLength: "",
       currentPage: 1,

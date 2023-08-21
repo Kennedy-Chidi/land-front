@@ -493,7 +493,7 @@ export default {
     async getWallets(user) {
       try {
         const result = await this.$axios.get(
-          `/wallet/?username=${user.username}&limit=10000&page=1`
+          `/wallet/?username=${this.authUser.username}&limit=10000&page=1`
         );
         this.totalDeposit = this.getTotalDeposit(await result.data.data);
         this.totalWithdrawal = this.getTotalWithdrawal(await result.data.data);
@@ -509,7 +509,7 @@ export default {
     async getActiveDeposit(user) {
       try {
         const result = await this.$axios.get(
-          `/transactions/active-deposits/?username=${user.username}&limit=1000&page=1`
+          `/transactions/active-deposits/?username=${this.authUser.username}&limit=1000&page=1`
         );
         this.activeDeposit = this.getActive(result.data.data);
       } catch (err) {

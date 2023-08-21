@@ -20,7 +20,6 @@
                   <td>Remaining</td>
                   <td>Earning</td>
                   <td>Date</td>
-                  <td>Status</td>
                 </tr>
               </thead>
               <tbody>
@@ -53,15 +52,6 @@
                   <td>
                     {{ formatDate(transaction.time) }} <br />
                     {{ getTime(transaction.time) }}
-                  </td>
-
-                  <td>
-                    <div
-                      @click="continueEarning(transaction)"
-                      class="status success"
-                    >
-                      Continue
-                    </div>
                   </td>
                 </tr>
               </tbody>
@@ -144,7 +134,7 @@ export default {
 
       sort: "-time",
       field: "",
-      limit: 5,
+      limit: 20,
       resultLength: "",
       currentPage: 1,
       pages: function () {
