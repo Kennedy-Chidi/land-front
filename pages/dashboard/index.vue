@@ -345,7 +345,7 @@ export default {
     return {
       totalDeposit: "",
       totalWithdrawal: "",
-      activeDeposit: "",
+      activeDeposit: 0,
       pendingWithdrawal: "",
 
       transactions: [],
@@ -416,9 +416,9 @@ export default {
       } else {
         let money = 0;
         data.forEach(async (el) => {
-          money += await el.amount;
+          this.activeDeposit += await el.amount;
         });
-        return money;
+        // this.activeDeposit = money;
       }
     },
 
@@ -511,7 +511,9 @@ export default {
         const result = await this.$axios.get(
           `/transactions/active-deposits/?username=${this.authUser.username}&limit=1000&page=1`
         );
-        this.activeDeposit = this.getActive(result.data.data);
+        this.getActive(result.data.data);
+        // this.activeDeposit = this.getActive(result.data.data);
+        // console.log(this.activeDeposit);
       } catch (err) {
         console.log(err.response);
       }
