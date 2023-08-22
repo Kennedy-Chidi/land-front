@@ -415,10 +415,11 @@ export default {
         return 0;
       } else {
         let money = 0;
-        data.forEach(async (el) => {
-          this.activeDeposit += await el.amount;
-        });
-        // this.activeDeposit = money;
+        for (let i = 0; i < data.length; i++) {
+          money += data[i].amount;
+        }
+
+        return money;
       }
     },
 
@@ -511,9 +512,8 @@ export default {
         const result = await this.$axios.get(
           `/transactions/active-deposits/?username=${this.authUser.username}&limit=1000&page=1`
         );
-        this.getActive(result.data.data);
-        // this.activeDeposit = this.getActive(result.data.data);
-        // console.log(this.activeDeposit);
+        // this.getActive(result.data.data);
+        this.activeDeposit = this.getActive(result.data.data);
       } catch (err) {
         console.log(err.response);
       }
