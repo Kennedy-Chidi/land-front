@@ -177,6 +177,7 @@ export default {
         username: this.username,
         password: this.password,
       };
+      console.log(this.username, this.password);
       this.handleLogin(form);
     },
 
