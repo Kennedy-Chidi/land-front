@@ -166,7 +166,7 @@ export default {
           this.isError = true;
         }
       } else if (input == "fullName") {
-        if (!data || data == "" || !(data.split(" ").length >= 2)) {
+        if (!data || data == "") {
           const parent = this.$el.querySelector(".fullName");
           parent.classList.add("active");
           this.isError = false;

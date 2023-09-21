@@ -124,6 +124,7 @@ export default {
       }
     },
     callResponse(msg, state) {
+      console.log(msg);
       this.response = msg;
       this.isError = state;
       this.showResponse = true;
