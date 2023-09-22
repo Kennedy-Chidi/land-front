@@ -21,7 +21,6 @@
                 maxlength="256"
                 placeholder="Enter username"
                 v-model="username"
-                @blur="checkErrorInputs('username', username)"
               />
               <label for="name-7" class="field-label fullName"
                 >Fullname must have at least two words</label
@@ -30,7 +29,6 @@
                 class="text-field-16 w-input"
                 placeholder="Enter full name"
                 v-model="fullName"
-                @blur="checkErrorInputs('fullName', fullName)"
               /><label for="name-7" class="field-label email"
                 >Please enter a valid email.</label
               ><input
@@ -38,7 +36,6 @@
                 class="text-field-16 w-input"
                 maxlength="256"
                 placeholder="Enter Email"
-                @blur="checkErrorInputs('email', email)"
                 v-model="email"
               />
               <label for="name-7" class="field-label password"
@@ -245,10 +242,10 @@ export default {
 
     setArray() {
       this.checkArray = [
-        { name: "fullName", data: this.fullName },
-        { name: "username", data: this.username },
-        { name: "email", data: this.email },
-        { name: "phoneNumber", data: this.phoneNumber },
+        // { name: "fullName", data: this.fullName },
+        // { name: "username", data: this.username },
+        // { name: "email", data: this.email },
+        // { name: "phoneNumber", data: this.phoneNumber },
         { name: "password", data: this.password },
         { name: "cPassword", data: this.cPassword },
       ];
