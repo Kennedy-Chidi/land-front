@@ -136,12 +136,7 @@ export default {
 
     checkErrorInputs(input, data) {
       if (input == "username") {
-        if (
-          data == "" ||
-          !data ||
-          data.length < 2 ||
-          !/^[a-zA-Z0-9]+$/.test(data)
-        ) {
+        if (data == "" || !data) {
           const parent = this.$el.querySelector(".username");
           parent.classList.add("active");
           this.isError = false;
@@ -152,7 +147,7 @@ export default {
           this.isError = true;
         }
       } else if (input == "password") {
-        if (data == "" || !data || data.length < 6) {
+        if (data == "" || !data || data.length < 2) {
           const parent = this.$el.querySelector(".password");
           parent.classList.add("active");
           this.isError = false;
