@@ -157,18 +157,19 @@ export default {
           parent.classList.remove("active");
           this.isError = true;
         }
-      } else if (input == "fullName") {
-        if (!data || data == "") {
-          const parent = this.$el.querySelector(".fullName");
-          parent.classList.add("active");
-          this.isError = false;
-          return;
-        } else {
-          const parent = this.$el.querySelector(".fullName");
-          parent.classList.remove("active");
-          this.isError = true;
-        }
       }
+      // else if (input == "fullName") {
+      //   if (!data || data == "") {
+      //     const parent = this.$el.querySelector(".fullName");
+      //     parent.classList.add("active");
+      //     this.isError = false;
+      //     return;
+      //   } else {
+      //     const parent = this.$el.querySelector(".fullName");
+      //     parent.classList.remove("active");
+      //     this.isError = true;
+      //   }
+      // }
       //else if (input == "phoneNumber") {
       //   if (data == "" || !data || !/^[0-9+]+$/.test(data)) {
       //     const parent = this.$el.querySelector(".phoneNumber");
