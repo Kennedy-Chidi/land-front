@@ -81,6 +81,13 @@
                 </div>
               </div>
               <input
+                v-if="onRequest"
+                type="submit"
+                value="Processing..."
+                class="submit-button-10 w-button"
+              />
+              <input
+                v-else
                 type="submit"
                 value="Create an Account"
                 class="submit-button-10 w-button"
@@ -157,44 +164,7 @@ export default {
           parent.classList.remove("active");
           this.isError = true;
         }
-      }
-      // else if (input == "fullName") {
-      //   if (!data || data == "") {
-      //     const parent = this.$el.querySelector(".fullName");
-      //     parent.classList.add("active");
-      //     this.isError = false;
-      //     return;
-      //   } else {
-      //     const parent = this.$el.querySelector(".fullName");
-      //     parent.classList.remove("active");
-      //     this.isError = true;
-      //   }
-      // }
-      //else if (input == "phoneNumber") {
-      //   if (data == "" || !data || !/^[0-9+]+$/.test(data)) {
-      //     const parent = this.$el.querySelector(".phoneNumber");
-      //     parent.classList.add("active");
-      //     this.isError = false;
-      //     return;
-      //   } else {
-      //     const parent = this.$el.querySelector(".phoneNumber");
-      //     parent.classList.remove("active");
-      //     this.isError = true;
-      //   }
-      // }
-      // else if (input == "email") {
-      //   if (data == "" || !data || !/^\S+@\S+\.\S+$/.test(data)) {
-      //     const parent = this.$el.querySelector(".email");
-      //     parent.classList.add("active");
-      //     this.isError = false;
-      //     return;
-      //   } else {
-      //     const parent = this.$el.querySelector(".email");
-      //     parent.classList.remove("active");
-      //     this.isError = true;
-      //   }
-      // }
-      else if (input == "password") {
+      } else if (input == "password") {
         if (data == "" || !data || data.length < 2) {
           const parent = this.$el.querySelector(".password");
           parent.classList.add("active");
@@ -273,6 +243,8 @@ export default {
         password: this.password,
         cPassword: this.cPassword,
       };
+
+      this.onRequest = true;
 
       try {
         await this.$axios.post("/users/signup", form);
