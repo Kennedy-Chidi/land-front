@@ -1,5 +1,10 @@
 <template>
   <div class="main-wrapper transactions">
+    <admin-confirmation
+      :msg="confirmMessage"
+      :state="confirmState"
+      @confirm="returnConfirmation"
+    />
     <admin-navigation />
     <div class="body-wrapper">
       <admin-top-header />
@@ -52,6 +57,24 @@
                   <td>
                     {{ formatDate(transaction.time) }} <br />
                     {{ getTime(transaction.time) }}
+                  </td>
+                  <td>
+                    <div
+                      class="filter-box"
+                      @click="
+                        deleteConfirmation(
+                          'Are you sure you want to delete this transaction?',
+                          transaction._id
+                        )
+                      "
+                    >
+                      <img
+                        src="/admin-images/delete-gray.svg"
+                        loading="lazy"
+                        alt=""
+                        class="filter-icon check action-icon"
+                      />
+                    </div>
                   </td>
                 </tr>
               </tbody>
@@ -168,6 +191,12 @@ export default {
       }
     },
 
+    deleteConfirmation(msg, id) {
+      this.deleteId = id;
+      this.confirmMessage = msg;
+      this.confirmState = false;
+    },
+
     getDuration(data) {
       if (!data) {
         return "N/A";
@@ -237,6 +266,19 @@ export default {
         this.company = result.data.data[0];
       } catch (err) {
         console.log(err.response.data.message);
+      }
+    },
+
+    async deleteTransaction(id) {
+      const query = `?limit=${this.limit}&sort=${this.sort}&page=${this.currentPage}${this.field}`;
+      try {
+        const result = await this.$axios.delete(
+          `transactions/active-deposits/${id}/${query}`
+        );
+        this.transactions = result.data.data;
+        this.resultLength = result.data.resultLength;
+      } catch (err) {
+        console.log(err.response.data);
       }
     },
   },

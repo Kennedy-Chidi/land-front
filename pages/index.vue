@@ -327,18 +327,7 @@
                       class="image-72"
                     />
                   </div>
-                  <h1 class="heading-52">
-                    {{
-                      formatMoney(
-                        100 -
-                          61 -
-                          (
-                            (company.onlineMembers / company.totalMembers) *
-                            100
-                          ).toFixed(1)
-                      )
-                    }}%
-                  </h1>
+                  <h1 class="heading-52">100%</h1>
                   <div class="text-block-53">Deposit</div>
                 </div>
                 <div class="div-block-227">
@@ -350,16 +339,7 @@
                       class="image-72"
                     />
                   </div>
-                  <h1 class="heading-52" v-if="company">
-                    {{
-                      formatMoney(
-                        (
-                          (company.activeMembers / company.totalMembers) *
-                          100
-                        ).toFixed(1)
-                      )
-                    }}%
-                  </h1>
+                  <h1 class="heading-52" v-if="company">100%</h1>
                   <div class="text-block-53">Investment</div>
                 </div>
                 <div class="div-block-227">
@@ -371,16 +351,7 @@
                       class="image-72"
                     />
                   </div>
-                  <h1 class="heading-52">
-                    {{
-                      formatMoney(
-                        (
-                          (company.onlineMembers / company.totalMembers) *
-                          100
-                        ).toFixed(1)
-                      )
-                    }}%
-                  </h1>
+                  <h1 class="heading-52">100%</h1>
                   <div class="text-block-53">Withdrawal</div>
                 </div>
               </div>
