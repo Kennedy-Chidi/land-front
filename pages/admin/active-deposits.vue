@@ -1,10 +1,10 @@
 <template>
   <div class="main-wrapper transactions">
-    <admin-confirmation
+    <!-- <admin-confirmation
       :msg="confirmMessage"
       :state="confirmState"
       @confirm="returnConfirmation"
-    />
+    /> -->
     <admin-navigation />
     <div class="body-wrapper">
       <admin-top-header />
