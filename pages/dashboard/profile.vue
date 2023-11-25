@@ -103,6 +103,15 @@
                         </div>
                       </div>
                     </div>
+                    <div class="erro-holder">
+                      <div
+                        v-if="showResponse"
+                        :class="{ error: isError }"
+                        class="erro-text"
+                      >
+                        {{ response }}
+                      </div>
+                    </div>
                     <div class="profile-button-holder">
                       <button
                         @click="updatePassword"
@@ -194,33 +203,26 @@ export default {
     checkErrorInputs(input, data) {
       if (input == "oldPassword") {
         if (data == "" || !data || data.length < 6) {
-          const parent = this.$el.querySelector(".oldPassword");
-          parent.classList.add("active");
+          this.callResponse("Please fill in old password", true);
           return false;
         } else {
-          const parent = this.$el.querySelector(".oldPassword");
-          parent.classList.remove("active");
           this.isError = true;
         }
       } else if (input == "password") {
         if (data == "" || !data || data.length < 6) {
-          const parent = this.$el.querySelector(".password");
-          parent.classList.add("active");
+          this.callResponse("Please fill in valid password", true);
+
           return false;
         } else {
-          const parent = this.$el.querySelector(".password");
-          parent.classList.remove("active");
           this.isError = true;
         }
       } else if (input == "cPassword") {
         if (data == "" || data != this.password) {
-          const parent = this.$el.querySelector(".cPassword");
-          parent.classList.add("active");
+          this.callResponse("Please fill in the confirm password", true);
+
           this.isError = false;
           return;
         } else {
-          const parent = this.$el.querySelector(".cPassword");
-          parent.classList.remove("active");
           this.isError = true;
         }
       }
@@ -235,13 +237,13 @@ export default {
     },
 
     async updatePassword() {
-      this.setArray();
-      this.checkArray.forEach((el) => {
-        this.checkErrorInputs(el.name, el.data);
-      });
-      if (!this.isError) {
-        return;
-      }
+      // this.setArray();
+      // this.checkArray.forEach((el) => {
+      //   this.checkErrorInputs(el.name, el.data);
+      // });
+      // if (!this.isError) {
+      //   return;
+      // }
       const form = {
         oldPassword: this.oldPassword,
         password: this.password,
@@ -256,7 +258,7 @@ export default {
         );
         this.clearInputs();
       } catch (err) {
-        this.callResponse(err, true);
+        this.callResponse(err.response.data.message, true);
       }
     },
 
