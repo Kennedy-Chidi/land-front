@@ -942,7 +942,6 @@ export default {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  /* width: 150px; */
   margin-bottom: 20px;
 }
 
