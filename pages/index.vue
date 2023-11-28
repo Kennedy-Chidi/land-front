@@ -30,58 +30,33 @@
                 </div>
               </div>
               <div class="div-block-207">
-                <img src="/images/hero.jpeg" alt="" />
-                <!-- <h1 class="heading-48">Days on Line</h1>
-                <div class="div-block-211">
-                  <div class="div-block-208">
-                    <div class="div-block-210">
-                      <div class="div-block-209">
-                        <div class="text-block-47 days">{{ days }}</div>
-                      </div>
-                      <div class="text-block-48">Days</div>
-                    </div>
-                  </div>
-                  <div class="div-block-208">
-                    <div class="div-block-210">
-                      <div class="div-block-209">
-                        <div class="text-block-47">{{ hours }}</div>
-                      </div>
-                      <div class="text-block-48">Hours</div>
-                    </div>
-                  </div>
-                  <div class="div-block-208">
-                    <div class="div-block-210">
-                      <div class="div-block-209">
-                        <div class="text-block-47">{{ minutes }}</div>
-                      </div>
-                      <div class="text-block-48">Minutes</div>
-                    </div>
-                  </div>
-                  <div class="div-block-208">
-                    <div class="div-block-210">
-                      <div class="div-block-209">
-                        <div class="text-block-47">{{ seconds }}</div>
-                      </div>
-                      <div class="text-block-48">Seconds</div>
-                    </div>
-                  </div>
+                <h2 class="tile">Landmark Christmas Bonanza</h2>
+                <img src="/images/image7.svg" alt="" class="christImage" />
+                <div class="bonan">
+                  <div class="yellow">$200 - $2,500</div>
+                  <div class="yellow space">=></div>
+                  <div class="white">%60.00</div>
                 </div>
-                <nuxt-link to="/login" class="button-15 w-button"
-                  >invest now</nuxt-link
-                >
-                <div class="div-block-212">
-                  <div class="text-block-49">
-                    Active Users: {{ formatMoney(company.totalMembers) }}
-                  </div>
+                <div class="bonan">
+                  <div class="yellow">$2,600 - Unlimited</div>
+                  <div class="yellow space">=></div>
+                  <div class="white">%100.00</div>
                 </div>
-                <div class="div-block-213">
-                  <div class="div-block-213 b"></div>
+                <div class="duration du-top">
+                  <div class="yellow">Started</div>
+                  <div class="yellow space">=></div>
+                  <div class="white">1st December, 2023</div>
                 </div>
-                <div class="div-block-212">
-                  <div class="text-block-49">Softcap</div>
-                  <div class="text-block-49 b">Hardcap</div>
-                </div> -->
+                <div class="duration">
+                  <div class="yellow">Ends</div>
+                  <div class="yellow space">=></div>
+                  <div class="white">31st December, 2023</div>
+                </div>
               </div>
+              <!-- <div class="div-block-207">
+                <img src="/images/hero.jpeg" alt="" />
+               
+              </div> -->
             </div>
           </div>
         </div>
@@ -906,6 +881,48 @@ export default {
 </script>
 
 <style>
+.christImage {
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.div-block-207 {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bonan {
+  display: flex;
+  align-items: center;
+  color: #ffff00;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.duration {
+  display: flex;
+  align-items: center;
+  color: #aceb2f;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.du-top {
+  margin-top: 20px;
+}
+
+.space {
+  margin: 0 10px;
+}
+
+.white {
+  color: white;
+  font-weight: bold;
+}
+
 .div-block-229 {
   margin-bottom: 20px;
 }
@@ -943,5 +960,15 @@ export default {
   min-width: 100%;
   min-height: 100%;
   object-fit: cover;
+}
+
+@media screen and (max-width: 500px) {
+  .tile {
+    font-size: 20px;
+  }
+
+  .bonan {
+    font-size: 16px;
+  }
 }
 </style>
