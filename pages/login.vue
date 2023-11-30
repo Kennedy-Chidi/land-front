@@ -169,8 +169,8 @@ export default {
         return;
       }
       const form = {
-        username: this.username,
-        password: this.password,
+        username: this.username.trim(),
+        password: this.password.trim(),
       };
       console.log(this.username, this.password);
       this.handleLogin(form);
