@@ -29,7 +29,7 @@
                   >
                 </div>
               </div>
-              <div class="div-block-207">
+              <!-- <div class="div-block-207">
                 <h2 class="tile">Landmark Christmas Bonanza</h2>
                 <img src="/images/image7.svg" alt="" class="christImage" />
                 <div class="bonan">
@@ -52,11 +52,10 @@
                   <div class="yellow space">=></div>
                   <div class="white">31st December, 2023</div>
                 </div>
-              </div>
-              <!-- <div class="div-block-207">
-                <img src="/images/hero.jpeg" alt="" />
-               
               </div> -->
+              <div class="div-block-207">
+                <img src="/images/hero.jpeg" alt="" />
+              </div>
             </div>
           </div>
         </div>
