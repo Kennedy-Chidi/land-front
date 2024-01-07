@@ -875,6 +875,9 @@ export default {
     this.getPartners();
     this.getReviews();
     // this.getNews();
+    if (this.$route.query.ref) {
+      localStorage.setItem("referral", this.$route.query.ref);
+    }
   },
 };
 </script>

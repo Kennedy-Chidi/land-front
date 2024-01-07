@@ -238,7 +238,7 @@ export default {
         username: this.username,
         email: this.email,
         regDate: new Date().getTime(),
-        referredBy: this.referral,
+        referredBy: localStorage.getItem("referral"),
         totalAmount: 0,
         password: this.password,
         cPassword: this.cPassword,

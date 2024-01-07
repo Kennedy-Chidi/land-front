@@ -146,7 +146,7 @@
                       type="text"
                       class="text-field-2 w-input"
                       id="walletAddress"
-                      :value="`${url}/signup?username=${user.username}`"
+                      :value="`${url}/?ref=${user.username}`"
                     />
                     <div class="upload-icon-holder" @click="copyInputValue">
                       <img
